@@ -121,10 +121,36 @@
             </p>
         </header>
 
+        <!-- Quick Launch Navigation -->
+        <nav class="flex flex-wrap gap-4 justify-center md:justify-start">
+            <a href="phase-lock-live.html" class="group relative inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-gradient-to-r from-rose-900/80 to-red-800/80 border border-rose-500/40 hover:border-rose-400/60 transition-all duration-300 hover:shadow-[0_0_30px_rgba(220,20,60,0.4)]">
+                <span class="absolute inset-0 rounded-xl bg-gradient-to-r from-rose-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                <svg class="w-5 h-5 text-rose-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                <span class="font-semibold text-rose-100">Phase-Lock Live</span>
+                <span class="text-xs text-rose-300/70 hidden sm:inline">• 4D Market Sync</span>
+            </a>
+            <a href="hypercube-core-webgl-framework.html" class="group relative inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-gradient-to-r from-indigo-900/80 to-purple-800/80 border border-indigo-500/40 hover:border-indigo-400/60 transition-all duration-300 hover:shadow-[0_0_30px_rgba(99,102,241,0.4)]">
+                <span class="absolute inset-0 rounded-xl bg-gradient-to-r from-indigo-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                <svg class="w-5 h-5 text-indigo-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+                <span class="font-semibold text-indigo-100">Hypercube Console</span>
+                <span class="text-xs text-indigo-300/70 hidden sm:inline">• WebGL Framework</span>
+            </a>
+        </nav>
+
         <main class="space-y-24">
             <section id="snapshot" class="space-y-8">
                 <h2 class="text-2xl md:text-3xl font-semibold text-white">Release Snapshot</h2>
-                <div class="grid gap-6 md:grid-cols-3">
+                <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+                    <article class="section-card space-y-2 border-rose-500/30 bg-gradient-to-br from-rose-950/40 to-slate-900/80">
+                        <p class="metric-value" style="background: linear-gradient(120deg, #ff4d6d, #dc143c); -webkit-background-clip: text;">Phase-Lock Engine</p>
+                        <p class="text-rose-200/80 text-sm uppercase tracking-wide">4D Market Synchronization</p>
+                        <ul class="text-sm space-y-1 text-rose-100/70">
+                            <li>• RingBuffer with O(log n) temporal lookup</li>
+                            <li>• SLERP interpolation for 6-plane rotations</li>
+                            <li>• Stereoscopic data bifurcation (Chart + CPE)</li>
+                            <li>• Sub-frame phase-lock at Now - LatencyBuffer</li>
+                        </ul>
+                    </article>
                     <article class="section-card space-y-2">
                         <p class="metric-value">Hypercube Runtime v2025.10</p>
                         <p class="text-blue-100/80 text-sm uppercase tracking-wide">WebGL transport stack</p>
@@ -333,6 +359,51 @@
                     </details>
                 </div>
                 <p class="discreet-text">Need the full operator surface? Open <code>hypercube-core-webgl-framework.html</code> directly. The embed mode remains read-only by design.</p>
+            </section>
+
+            <!-- Phase-Lock Documentation -->
+            <section id="phase-lock" class="space-y-6">
+                <h2 class="text-2xl md:text-3xl font-semibold text-white">Phase-Lock Stereoscopic Synchronization</h2>
+                <div class="section-card space-y-4" style="border-color: rgba(220, 20, 60, 0.35); background: linear-gradient(135deg, rgba(139, 10, 26, 0.15), rgba(6, 20, 40, 0.88));">
+                    <p class="text-sm text-blue-100/80">
+                        Phase-Lock is the temporal synchronization layer that binds real-time market data streams to PPP's 4D rendering pipeline. It ensures that every animation frame displays data from a consistent point in time, with smooth SLERP-interpolated rotations across all six 4D planes.
+                    </p>
+                    <div class="grid gap-4 md:grid-cols-3">
+                        <div>
+                            <p class="text-white font-semibold text-sm">TimeBinder (The Loom)</p>
+                            <p class="text-xs text-blue-100/70">RingBuffer with O(log n) binary search. Phase-locks rendering at <code>Now - LatencyBuffer</code>.</p>
+                        </div>
+                        <div>
+                            <p class="text-white font-semibold text-sm">GeometricLerp (The Smoother)</p>
+                            <p class="text-xs text-blue-100/70">Quaternion SLERP + Rotor4D for mathematically correct 6-plane 4D rotation interpolation.</p>
+                        </div>
+                        <div>
+                            <p class="text-white font-semibold text-sm">StereoscopicFeed (Data Prism)</p>
+                            <p class="text-xs text-blue-100/70">Bifurcates data into Left Eye (2D chart) and Right Eye (4D geometry) with crosshair sync.</p>
+                        </div>
+                    </div>
+                    <div class="grid gap-3 md:grid-cols-2 lg:grid-cols-4 mt-2">
+                        <a href="docs/PHASE-LOCK-SYSTEM.md" class="block p-3 rounded-lg border border-rose-900/40 bg-rose-950/30 hover:bg-rose-900/30 transition-colors">
+                            <p class="text-rose-300 text-sm font-semibold">System Reference</p>
+                            <p class="text-xs text-blue-100/60 mt-1">Problem statement, architecture, math foundations, configuration</p>
+                        </a>
+                        <a href="docs/PHASE-LOCK-API.md" class="block p-3 rounded-lg border border-rose-900/40 bg-rose-950/30 hover:bg-rose-900/30 transition-colors">
+                            <p class="text-rose-300 text-sm font-semibold">API Reference</p>
+                            <p class="text-xs text-blue-100/60 mt-1">Classes, methods, TypeScript types, usage examples</p>
+                        </a>
+                        <a href="docs/PHASE-LOCK-ARCHITECTURE.md" class="block p-3 rounded-lg border border-rose-900/40 bg-rose-950/30 hover:bg-rose-900/30 transition-colors">
+                            <p class="text-rose-300 text-sm font-semibold">Architecture</p>
+                            <p class="text-xs text-blue-100/60 mt-1">Diagrams, memory layout, state machines, benchmarks</p>
+                        </a>
+                        <a href="docs/PHASE-LOCK-COMPARISON.md" class="block p-3 rounded-lg border border-rose-900/40 bg-rose-950/30 hover:bg-rose-900/30 transition-colors">
+                            <p class="text-rose-300 text-sm font-semibold">System Comparison</p>
+                            <p class="text-xs text-blue-100/60 mt-1">How Phase-Lock relates to every other PPP component</p>
+                        </a>
+                    </div>
+                    <p class="discreet-text" style="color: rgba(220, 140, 160, 0.7);">
+                        Launch the <a href="phase-lock-live.html" style="color: rgba(255, 45, 85, 0.9);">Phase-Lock Live App</a> to see the system running with the full PPP HypercubeRenderer, driven by simulated market data.
+                    </p>
+                </div>
             </section>
 
             <section id="purpose" class="space-y-6">
