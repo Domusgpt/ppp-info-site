@@ -1,0 +1,20 @@
+[
+  {
+    "sequenceId": "hopf-orbit",
+    "label": "Hopf Orbit Sweep",
+    "sampleRate": 36,
+    "durationSeconds": 10
+  },
+  {
+    "sequenceId": "flux-ramp",
+    "label": "Flux Continuum Ramp",
+    "sampleRate": 30,
+    "durationSeconds": 8
+  },
+  {
+    "sequenceId": "spinor-coherence",
+    "label": "Spinor Coherence Pulse",
+    "sampleRate": 30,
+    "durationSeconds": 12
+  }
+]

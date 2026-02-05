@@ -389,6 +389,15 @@
                         <li><strong>CalibrationInsightEngine</strong> produces operator narratives highlighting deviations, regressions, and follow-up actions.</li>
                         <li><strong>Release checks</strong> land as Node tests (`npm test`) covering the builder, insight engine, live telemetry, and sonic geometry modules.</li>
                     </ul>
+                    <div class="border border-white/10 rounded-2xl bg-white/5 p-4 text-sm text-blue-100/75 space-y-2">
+                        <p class="font-semibold text-white">Cloud calibration standard</p>
+                        <p>Formalize cloud test runs with deterministic plans, run metadata, and hashed artifacts so calibration can be reproduced across compute clusters.</p>
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li><a href="docs/PPP-Cloud-Calibration.md">PPP Cloud Calibration Standard</a> details required artifacts and acceptance checks.</li>
+                            <li>Run the cloud builder with <code>node scripts/ppp-cloud-calibration.js --plan samples/calibration/ppp-cloud-plan.json</code>.</li>
+                            <li>Artifacts land under <code>dist/cloud-calibration</code> for upload to audit storage.</li>
+                        </ul>
+                    </div>
                     <p class="discreet-text">Reference artefacts: `samples/calibration/ppp-calibration-dataset-summary.json`, `samples/calibration/ppp-calibration-insights.json`.</p>
                 </div>
             </section>
