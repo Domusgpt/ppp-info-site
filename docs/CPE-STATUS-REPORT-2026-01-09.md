@@ -67,7 +67,20 @@ From cognitive science research on how humans reason about causality:
 
 The CPE physics engine is designed to satisfy all three constraints.
 
-### 1.2 The Orthocognitum
+### 1.2 Dynamic Topology Selection (Simplex → Hypercube → 24-Cell)
+
+The CPE selects topology dynamically as cognition progresses, moving from **simplex** to **hypercube** to **24-cell**. This adaptive sequencing is grounded in the polytope vocabulary defined in *“A Vocabulary of Form: The Six Convex Regular 4-Polytopes (Polychora)”* in the Chronomorphic Polytopal Engine Expansion document, which provides the canonical state-space menu for adaptive topology selection. The progression can be summarized as:
+
+- **Simplex (4-simplex / 5-cell):** Minimal connectivity for rapid **association** and hypothesis seeding.
+- **Hypercube (tesseract / 8-cell):** Orthogonal axes for **discrimination**, contrast, and structured branching.
+- **24-Cell (icositetrachoron):** Dense, self-dual symmetry for **synthesis** and coherence validation.
+
+### 1.3 Progressive Topology Benefits: Energy Efficiency and Audit Clarity
+
+Progressive topology improves **energy efficiency** by allocating computational effort only when needed: early reasoning steps use the low-cost simplex manifold, and only escalate to the higher-degree hypercube and 24-cell when richer structure is required. This reduces unnecessary state updates while preserving the ability to scale precision under demand.  
+It also improves **audit clarity** by making reasoning stages explicit in the geometry. Each topology change produces a visible, auditable transition between association, discrimination, and synthesis phases, enabling validators to trace how and why the engine upgraded the representational manifold.
+
+### 1.4 The Orthocognitum
 
 The "Orthocognitum" is the valid region of thought - the space where coherent reasoning can occur. It is defined by the **24-Cell polytope**, a unique 4-dimensional shape with these properties:
 
@@ -78,7 +91,7 @@ The "Orthocognitum" is the valid region of thought - the space where coherent re
 
 If a reasoning state leaves the Orthocognitum, it has entered the realm of incoherent or invalid thought.
 
-### 1.3 Clifford Algebra Cl(4,0)
+### 1.5 Clifford Algebra Cl(4,0)
 
 The mathematical substrate is **Clifford Algebra** (also called Geometric Algebra) over 4-dimensional Euclidean space. Key properties:
 
