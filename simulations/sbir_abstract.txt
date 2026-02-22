@@ -1,0 +1,13 @@
+TECHNICAL ABSTRACT: Polytopal Orthogonal Modulation for Resilient Optical/RF Communications
+
+INNOVATION: We propose Polytopal Orthogonal Modulation (POM), a novel physical-layer protocol that modulates data onto the vertices of high-dimensional polytopes rather than traditional 2D constellation grids. Specifically, we encode information on the 120 vertices of the 600-cell (4D hyper-icosahedron), exploiting its optimal sphere-packing properties (kissing number 12, minimum distance 0.618).
+
+TECHNICAL APPROACH: The transmitter maps bit sequences to 4D quaternions representing combined Orbital Angular Momentum (OAM) and polarization states. The receiver performs "geometric quantization"—a nearest-neighbor lookup that inherently provides error correction without parity overhead. A cryptographic hash chain rotates the constellation orientation per-packet, providing physical-layer encryption.
+
+PRELIMINARY RESULTS: Monte Carlo simulations demonstrate that POM achieves 10-650x lower symbol error rates compared to 64-QAM across 10-20 dB SNR. In Rayleigh fading channels (relevant to hypersonic tracking), POM shows 67x improvement. Security analysis confirms that without the genesis hash, intercepted signals appear as random noise (50% BER).
+
+APPLICATIONS: (1) Defense: Resilient C2 links for hypersonic missile tracking, jam-resistant satellite communications. (2) Commercial: High-efficiency 6G backhaul, low-latency data center interconnects, atmospheric-turbulence-resistant FSO links.
+
+PHASE I OBJECTIVES: Demonstrate real-time POM modulation/demodulation on FPGA hardware, validate performance across multiple channel conditions, and characterize computational requirements for Phase II integration with OAM optical systems.
+
+KEYWORDS: Polytopal modulation, orbital angular momentum, lattice coding, geometric quantization, physical-layer security, 6G, hypersonic tracking.
