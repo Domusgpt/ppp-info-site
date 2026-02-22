@@ -1,0 +1,70 @@
+{
+  "modulation": {
+    "snr_db": [
+      0,
+      2,
+      4,
+      6,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22,
+      24
+    ],
+    "qam64_ser": [
+      0.9158,
+      0.9026,
+      0.8656,
+      0.8156,
+      0.7624,
+      0.6844,
+      0.5556,
+      0.4348,
+      0.267,
+      0.1436,
+      0.0478,
+      0.011,
+      0.0014
+    ],
+    "pom120_ser": [
+      0.8742,
+      0.8144,
+      0.717,
+      0.5774,
+      0.3834,
+      0.1954,
+      0.0636,
+      0.0092,
+      0.001,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "qam64_bits_per_symbol": 6.0,
+    "pom120_bits_per_symbol": 6.906890595608519
+  },
+  "topological": {
+    "threshold": 0.24721359549995792,
+    "min_lattice_distance": 0.6180339887498948,
+    "valid_accepted": 1776,
+    "valid_rejected": 224,
+    "decoy_accepted": 739,
+    "decoy_rejected": 1261,
+    "valid_accuracy": 0.888,
+    "decoy_rejection_rate": 0.6305,
+    "valid_mean_dist": 0.15867507551533294,
+    "decoy_mean_dist": 0.26061752585002695
+  },
+  "tracking": {
+    "kalman_mean_rms": 329.5036428206862,
+    "kalman_std_rms": 6.095423124180201,
+    "manifold_mean_rms": 325.5401111627281,
+    "manifold_std_rms": 7.944514460510364,
+    "improvement_percent": 1.2028794656194441
+  }
+}
