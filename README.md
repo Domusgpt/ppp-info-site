@@ -69,6 +69,22 @@ For a chronological view of the build-out, review [DEV_TRACK.md](./DEV_TRACK.md)
 - Geometric audit bridge piping constellation telemetry into hash-linked audit sessions when `PPP_CONFIG.geometricAudit.enabled` is set, exposing `PPP.geometricAudit` helpers for evidence and batch verification
 - OpenTelemetry-ready adapter layer for exporting live telemetry and audit events via `PPP_CONFIG.otel` (see `docs/otel-adapter.md`)
 
+### Cloud Calibration Standard
+
+Formal cloud runs are defined in `docs/PPP-Cloud-Calibration.md`, with a reference plan stored in `samples/calibration/ppp-cloud-plan.json`. Use the cloud runner to generate deterministic calibration artifacts and metadata for regression testing:
+
+```bash
+node scripts/ppp-cloud-calibration.js --plan samples/calibration/ppp-cloud-plan.json --out-dir dist/cloud-calibration
+```
+
+Validate the run with:
+
+```bash
+node scripts/ppp-cloud-validate.js --summary dist/cloud-calibration/ppp-cloud-calibration-summary.json --run dist/cloud-calibration/ppp-cloud-calibration-run.json
+```
+
+Use `--min-score` to override the default threshold (0.60) for stricter gating.
+
 ### Sonic Geometry Transmission Matrix
 
 Each harmonic analysis snapshot delivered through `PPP.sonicGeometry.onAnalysis` (and mirrored on `PPP_CONFIG.onSonicAnalysis`) now carries a `transmission` payload tuned for specialty receivers and multimodal transformers:
