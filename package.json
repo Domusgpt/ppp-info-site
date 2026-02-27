@@ -15,7 +15,9 @@
     "test:gemini-api": "./scripts/test-gemini-api.sh",
     "ci:status": "./scripts/check-ci-status.sh",
     "test:all": "npm run test:music && npm run test:bridge && npm run test:oracle",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "calibration:cloud": "node scripts/ppp-cloud-calibration.js",
+    "calibration:validate": "node scripts/ppp-cloud-validate.js"
   },
   "dependencies": {
     "dotenv": "^16.3.1"
